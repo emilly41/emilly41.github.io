@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Red</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Boda Red</div>
+        <div class="right-section">
+            <button class="deposit-button" onclick="openDepositModal()">Depósito</button>
+            <div class="balance">R$ 00,00</div>
+        </div>
+    </nav>
+
+    <div id="depositModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDepositModal()">&times;</span>
+            <h2>Depósito</h2>
+            <label for="depositAmount">Valor a ser depositado:</label>
+            <input type="text" id="depositAmount" name="depositAmount" value="R$ 0,00">
+            <br>
+            <label for="hasCoupon">Possui cupom?</label>
+            <input type="text" id="hasCoupon" name="hasCoupon">
+            <br>
+            <button class="generate-pix">GERAR PIX</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
+<script>
+    function openDepositModal() {
+    document.getElementById('depositModal').style.display = "block";
+}
+
+function closeDepositModal() {
+    document.getElementById('depositModal').style.display = "none";
+}
+
+</script>
